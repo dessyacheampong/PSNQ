@@ -1,0 +1,107 @@
+.draggable {
+    border: none;
+    position:absolute;
+}
+.draggable:hover {
+  border: 3px dotted rgb(51, 51, 51);
+}
+body{
+  margin: 0;
+  padding: 10px;
+  background-color: rgb(252, 251, 240);
+}
+.container {
+  /* height: 600px; */
+  display: flex;
+}
+.one {
+  width: 60px;
+  padding: 5px;
+  height: 60px;
+  left: 65%;
+  top: 27%;
+}
+.one a img{
+  width: 100%;
+  height: 100%;
+}
+.two {
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+  top: 20%;
+  left: 30%;
+}
+.two a img {
+  width: 100%;
+  height: 100%;
+}
+.three {
+  height: 85px;
+  width: 85px;
+  padding: 5px;
+  left: 46%;
+  top: 47%;
+}
+.three a img{
+  width: 100%;
+  height: 100%;
+}
+.four {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  left: 33%;
+  top: 70%;
+}
+.four a img {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  overflow: hidden;
+  margin: 0px 10px;
+}
+nav .row .left p{
+  text-align: left;
+  margin: 0px;
+}
+nav .row .middle p{
+  text-align: center;
+  margin: 0px;
+}
+nav .row .right p{
+  text-align: right;
+  margin: 0px;
+}
+nav .row .col-4 p a{
+  color: rgb(158, 158, 158);
+  font-family: "VT323";
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 300;
+}
+footer {
+  margin: 0;
+  padding: 0;
+}
+footer .row{
+  align-items: center;
+  position: absolute;
+  top: 95%;
+}
+footer .row p{
+  color: rgb(158, 158, 158);
+  font-family: "VT323";
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+  font-weight:300;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+}
+footer .row p a{
+  text-decoration: none;
+  color: rgb(158, 158, 158);
+}
