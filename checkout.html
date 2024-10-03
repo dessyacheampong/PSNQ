@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/css/cout.css">\
+    <link rel="stylesheet" href="/css/rows.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1><a href="/main.html">Checkout</a></h1>
+    </header>
+    <div class="container">
+        <section class="order-details">
+            <h2 class="head">Order Summary</h2>
+            <h3 class="sub-head">Have a coupon? Click here to enter your code</h3>
+            <div class="order-items">
+                <!-- Order items will be displayed here dynamically -->
+                <h2>billing & delivery </h2>
+                <h4>Billing details</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <h4>First name *</h4>
+                        <input type="text" name="" id="">
+                    </div>
+                    
+                    <div class="col-6">
+                        <h4>Last name *</h4>
+                        <input type="text" name="" id="">
+                    </div>
+                    <br>
+                    <h4> Email address  </h4>
+                    <input type="email" placeholder="username@example.com">
+                    <br>
+                    <h4>Country / Region </h4>
+                    <input type="text">
+                    <h4>Street address *</h4>
+                    <input type="text">
+                    <input type="text">
+                    <br>
+                    <h4>Town / City </h4>
+                    <input type="text">
+                    <h4>Phone </h4>
+                    <input type="tel">
+
+                </div>
+                <div class="summary">
+                    <h2>your order </h2>
+                    <table>
+                        <tr>
+                            <td>Product</td>
+                            <td>Subtotal</td>
+                        </tr>
+                        <tr>
+                            <td>Something</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>something</td>
+                            <td>$300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>$500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>$500.00</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <h2>additional info</h2>
+
+
+
+
+                    
+                    <h4>Order notes (optional)</h4>
+                    <input type="text">
+                    <br><br><br>
+                    <h2>payment info</h2>
+                    <div class="place-order">
+                        <input type="radio" name="" id="">
+                        Direct bank transfer <br>
+                        <div class="message">
+                            <p>Make your payment directly into our bank account. Please use Order ID as the 
+                                payment reference. Your order will not be processed until the funds get into our account.
+                            </p>
+                        </div>
+                        <input type= "radio">
+                        Mobile money <br>
+                        <div class="message">
+                            <p>
+                                Make payments to +233 24 555 1234. Please use your Order ID as the payment reference.
+                                Your order will not be processed until the funds reflect in our account.
+                            </p>
+                        </div>
+                        <input type="radio" name="" id="">
+                        Cash on delivery <br>
+                        <button id="place-order-btn">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Include your JavaScript file at the end -->
+    <script src="/js/checkout.js"></script>
+
+    <!-- footer -->
+    <footer>
+        <ul>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">twitter</a></li>
+            <li><a href="#">instagram</a></li>
+            <li><a href="#">youtube</a></li>
+            <li><a href="#">snapchat</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

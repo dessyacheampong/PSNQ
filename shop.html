@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Link to CSS-->
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/rows.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" >
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    />
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="slick/slick.css" />
+    <link rel="stylesheet" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="main.html" class="logo"><img src="img/LOGOO.png" alt=""></a>
+            <!-- Cart-Icon -->
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <!-- Cart -->
+            <div class="cart">
+                <h2 class="cart-title">Your Basket</h2>
+                <!-- Content -->
+                <div class="cart-content">
+                    
+                </div>
+                <!-- Total -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0.00</div>
+                </div>
+                <!-- Buy Button -->
+                <button type="button" class="btn-buy">Check Out</button>
+                <!-- Cart Close -->
+                <i class="bx bx-x" id="close-cart"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Banner -->
+    <div class="super-container">
+        <div class="welcome">
+            <h1>Brand</h1>
+            <h1>Community</h1>
+            <h1>State Of Being</h1>
+        </div>
+    </div>
+    <!-- Shop -->
+    <section class="shop container">
+        <h2 class="section-title">In Stock <br> -</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!-- Box 1 -->
+            <div class="product-box">
+                <img src="img/product1.png" alt="product1" class="product-img">
+                <h2 class="product-title">AEROREADY SHIRT</h2>
+                <span class="price">$2.47</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 2 -->
+            <div class="product-box">
+                <img src="img/product2.png" alt="product2" class="product-img"> 
+                <h2 class="product-title">THE FIRST</h2>
+                <span class="price">$4.00</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 3 -->
+            <div class="product-box">
+                <img src="img/product3.png" alt="product3" class="product-img"> 
+                <h2 class="product-title">MMXXIII</h2>
+                <span class="price">$2.43</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 4 -->
+            <div class="product-box">
+                <img src="img/product1.png" alt="product4" class="product-img"> 
+                <h2 class="product-title">FLIP THAT</h2>
+                <span class="price">$11.00</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 5 -->
+            <div class="product-box">
+                <img src="img/product2.png" alt="product5" class="product-img"> 
+                <h2 class="product-title">UNSEEN</h2>
+                <span class="price">$9.80</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 6 -->
+            <div class="product-box">
+                <img src="img/product3.png" alt="product6" class="product-img"> 
+                <h2 class="product-title">HIDDEN MATILDA</h2>
+                <span class="price">$11.20</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 7 -->
+            <div class="product-box">
+                <img src="img/product1.png" alt="product7" class="product-img"> 
+                <h2 class="product-title">MMXXIII 2</h2>
+                <span class="price">$13.00</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <!-- Box 8 -->
+            <div class="product-box">
+                <img src="img/product2.png" alt="product8" class="product-img"> 
+                <h2 class="product-title">2-2-DA-Game</h2>
+                <span class="price">$4.42</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="section-title">
+            On it's Way <br> -
+        </div>
+        <div class="rows count-box">
+            <div class="col-5">
+                
+            </div>
+            <div class="col-7">
+                <h1>30% Off at 00:00:00 </h1>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="countdown">00:00:00</span>
+                    </div>
+                </div>
+                <button type="submit">GET</button>
+            </div>
+        </div>
+    </section>
+    <!-- Pop-up -->
+    <!-- Initial Popup Container -->
+    <div id="popup-container">
+        <div id="popup-content">
+            <h4>Are you 18 or older?</h4>
+            <h2>PSNQS</h2>
+            <h4>By clicking "I am", I agree that I am over 18.</h4>
+            <button id="close-button">I AM</button>
+            <button id="close-button">NAH</button>
+        </div>
+    </div>
+
+    <!-- Second Popup Container -->
+    <div id="second-popup-container">
+        <div id="second-popup-content">
+            <h2>TOP TOP GOODS RIGHT INTO YOUR MAIL</h2>
+            <h4>SIGN UP FOR OUR NEWSLETTER AND</h4>
+            <h4>GET 20% OFF YOUR FIRST PURCHASE</h4>
+            <input type="email" placeholder="name@example.com"> <br>
+            <button type="submit">I'M IN</button>
+            <button onclick="closeSecondPopup()">LATER</button>
+        </div>
+    </div>
+
+    <!-- Best Sellers -->
+    <section>
+        <div class="section-title">
+            Best Sellers <br> -
+        </div>
+        <div class="row best-sellers ">
+            
+
+            <section class="tm-section tm-section-2 mx-auto">
+                <div class="grid tm-gallery">
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 1" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Pretty Girl" class="" />
+                    <figcaption>                                                    
+                      <h2>
+                        EDITION I
+                        <span>Picture</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Red Flowers" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Red Flower</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Stairs" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 5" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 6" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 7" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 8" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 9" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 10" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 11" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/1.JPEG" alt="Image 12" class="" />
+                    <figcaption>
+                      <h2>
+                        EDITION I
+                        <span>Goliath</span>
+                      </h2>
+                      <p>OUT OF STOCK</p>
+                      <a href="img/1.JPEG">View more</a>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+            </section>
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <h4 title="Out of Stock">SHOP BEST SELLERS</h4>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+
+    <!-- Link to Javascript -->
+    <script src="js/shop.js"></script>
+
+    <!-- footer -->
+    <footer>
+        <p>caught up, this is where you go up again. All rights reserved.</p>
+    </footer>
+</body>
+</html>
