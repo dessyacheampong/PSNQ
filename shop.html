@@ -139,31 +139,35 @@
             </div>
         </div>
     </section>
-<!--
-    <!-- Pop-up -->
-    <!-- Initial Popup Container -->
-    <div id="popup-container">
-        <div id="popup-content">
+
+    <!-- ==================== POP-UP SECTION ==================== -->
+    <!-- Age Verification Popup -->
+    <div id="popup-container" class="popup-overlay">
+        <div class="popup-content">
             <h4>Are you 18 or older?</h4>
             <h2>PSNQS</h2>
             <h4>By clicking "I am", I agree that I am over 18.</h4>
-            <button id="close-button">I AM</button>
-            <button id="close-button">NAH</button>
+            <div class="popup-buttons">
+                <button id="confirm-age" class="popup-btn primary">I AM</button>
+                <button id="deny-age" class="popup-btn secondary">NAH</button>
+            </div>
         </div>
     </div>
 
-    <!-- Second Popup Container -->
-    <div id="second-popup-container">
-        <div id="second-popup-content">
+    <!-- Newsletter Signup Popup -->
+    <div id="newsletter-popup" class="popup-overlay">
+        <div class="popup-content">
             <h2>TOP TOP GOODS RIGHT INTO YOUR MAIL</h2>
             <h4>SIGN UP FOR OUR NEWSLETTER AND</h4>
             <h4>GET 20% OFF YOUR FIRST PURCHASE</h4>
-            <input type="email" placeholder="name@example.com"> <br>
-            <button type="submit">I'M IN</button>
-            <button onclick="closeSecondPopup()">LATER</button>
+            <input type="email" placeholder="name@example.com" class="popup-input">
+            <div class="popup-buttons">
+                <button id="subscribe-btn" class="popup-btn primary">I'M IN</button>
+                <button id="close-newsletter" class="popup-btn secondary">LATER</button>
+            </div>
         </div>
     </div>
--->
+
     <!-- Best Sellers -->
     <section>
         <div class="section-title">
@@ -318,6 +322,7 @@
                 <div class="col-4"></div>
             </div>
         </div>
+
 
     <!-- Link to Javascript -->
     <script src="js/shop.js"></script>
