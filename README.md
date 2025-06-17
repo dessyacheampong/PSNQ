@@ -1,4 +1,3 @@
 **PSNQS** an online urban store. 
 
-The welcome page consists of dragable folders that lead you to the other pages.
-The store, the gallery, about, secrets and chat.
+/Root - is the introduction page. The first page you view when you launch the site. It include folders that direct you to other pages.
