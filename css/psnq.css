@@ -14,13 +14,20 @@ body {
 }
 
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.container1{
+    display: flex;
 }
 
+.container1.part1{
+    flex: 3;
+}
+
+.list-img img{
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 10px 10px black;
+    margin: 10px;
+}
 
 header {
     padding: 0;
