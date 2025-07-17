@@ -46,7 +46,7 @@
             </div>
         </div>
     </header> 
-
+    <div style="margin-top: 70px;">
     <div class="section1" style="overflow: hidden;"> 
         <div class="div1" style="width: 60%; float: left; padding: 20px;">
             <img id="mainImage" src="img/image1.png" alt="Product Image" style="width: 100%; height: auto; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" data-name="Nebula Sky Shirt" data-price="$49.99" data-description="This stylish shirt features a unique nebula design...">
@@ -74,6 +74,7 @@
                </button>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
@@ -104,12 +105,50 @@
             var mainImageHeight = document.getElementById('mainImage').offsetHeight;
             document.querySelector('.div2').style.height = mainImageHeight + 'px';
             // Initialize with the details for the first image, and null for clickedImage
-            changeImage(null, 'img/image1.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...');
+            changeImage(null, 'img/bgsmall.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...');
         };
     </script>
-    <div class="section2"></div>
+    <hr>
+    <div class="section2" style="padding: 20px;">
+        <!-- YOU MIGHT LIKE -->
+        <div class="you-might-like" style="margin-bottom: 40px;">
+            <h2 style="text-align: left; margin-bottom: 30px; font-weight: bold;">YOU MIGHT LIKE..</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
+                    <img src="img/bgsmall.png" alt="Cosmic Dream Tee" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
+                    <h4>Cosmic Dream Tee</h4>
+                    <p>$54.99</p>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
+                    <img src="img/image3.png" alt="Stardust Flow Top" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
+                    <h4>Stardust Flow Top</h4>
+                    <p>$39.99</p>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
+                    <img src="img/image4.png" alt="Galaxy Swirl Shirt" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
+                    <h4>Galaxy Swirl Shirt</h4>
+                    <p>$44.99</p>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
+                    <img src="img/image5.png" alt="Astral Echo Tee" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
+                    <h4>Astral Echo Tee</h4>
+                    <p>$59.99</p>
+                </div>
+            </div>
+        </div>
+        <!-- RECENTLY VIEWED -->
+        <div class="recently-viewed">
+            <h2 style="text-align: left; margin-bottom: 20px; font-weight: bold;">RECENTLY VIEWED...</h2>
+            <div class="row">
+                <!-- Recently viewed items would be dynamically populated here. -->
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="section3"></div>
+    <hr>
     <div class="section4"></div>
+    <hr>
     <div class="section5"></div>
 
 
