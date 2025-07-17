@@ -5,16 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
-    <!-- Link to CSS-->
     <link rel="stylesheet" href="css/shop.css">
     <link rel="stylesheet" href="css/rows.css">
-    <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" >
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     />
-    <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="slick/slick.css" />
@@ -26,7 +23,7 @@
     <!-- Header -->
     <header>
         <!-- Nav -->
-        <div class="nav container">
+        <div class="nav">
             <a href="root.html" class="logo"><img src="img/LOGOO.png" alt=""></a>
             <!-- Cart-Icon -->
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
@@ -48,288 +45,77 @@
                 <i class="bx bx-x" id="close-cart"></i>
             </div>
         </div>
-    </header>
-    <!-- Banner -->
-    <div class="super-container">
-        <div class="welcome">
-            <h1>Brand</h1>
-            <h1>Community</h1>
-            <h1>State Of Being</h1>
-        </div>
-    </div>
-    <!-- Shop -->
-    <section class="shop container">
-        <h2 class="section-title">In Stock <br> -</h2>
-        <!-- Content -->
-        <div class="shop-content">
-            <!-- Box 1 -->
-            <div class="product-box">
-                <img src="img/product1.png" alt="product1" class="product-img">
-                <h2 class="product-title">AEROREADY SHIRT</h2>
-                <span class="price">$2.47</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
+    </header> 
+
+    <div class="section1" style="overflow: hidden;"> 
+        <div class="div1" style="width: 60%; float: left; padding: 20px;">
+            <img id="mainImage" src="img/image1.png" alt="Product Image" style="width: 100%; height: auto; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" data-name="Nebula Sky Shirt" data-price="$49.99" data-description="This stylish shirt features a unique nebula design...">
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <img src="img/image1.png" alt="Small Image 1" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image1.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...')">
+                <img src="img/image2.png" alt="Small Image 2" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image2.png', 'Cosmic Dream Tee', '$54.99', 'A comfortable tee with a cosmic dream print...')">
+                <img src="img/image3.png" alt="Small Image 3" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image3.png', 'Stardust Flow Top', '$39.99', 'Light and airy top with a stardust flow pattern...')">
+                <img src="img/image4.png" alt="Small Image 4" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image4.png', 'Galaxy Swirl Shirt', '$44.99', 'Shirt with a mesmerizing galaxy swirl design...')">
+                <img src="img/image5.png" alt="Small Image 5" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image5.png', 'Astral Echo Tee', '$59.99', 'Premium tee featuring an astral echo graphic...')">
             </div>
-            <!-- Box 2 -->
-            <div class="product-box">
-                <img src="img/product2.png" alt="product2" class="product-img"> 
-                <h2 class="product-title">THE FIRST</h2>
-                <span class="price">$4.00</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 3 -->
-            <div class="product-box">
-                <img src="img/product3.png" alt="product3" class="product-img"> 
-                <h2 class="product-title">MMXXIII</h2>
-                <span class="price">$2.43</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 4 -->
-            <div class="product-box">
-                <img src="img/product1.png" alt="product4" class="product-img"> 
-                <h2 class="product-title">FLIP THAT</h2>
-                <span class="price">$11.00</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 5 -->
-            <div class="product-box">
-                <img src="img/product2.png" alt="product5" class="product-img"> 
-                <h2 class="product-title">UNSEEN</h2>
-                <span class="price">$9.80</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 6 -->
-            <div class="product-box">
-                <img src="img/product3.png" alt="product6" class="product-img"> 
-                <h2 class="product-title">HIDDEN MATILDA</h2>
-                <span class="price">$11.20</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 7 -->
-            <div class="product-box">
-                <img src="img/product1.png" alt="product7" class="product-img"> 
-                <h2 class="product-title">MMXXIII 2</h2>
-                <span class="price">$13.00</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- Box 8 -->
-            <div class="product-box">
-                <img src="img/product2.png" alt="product8" class="product-img"> 
-                <h2 class="product-title">2-2-DA-Game</h2>
-                <span class="price">$4.42</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="section-title">
-            On it's Way <br> -
-        </div>
-        <div class="rows count-box">
-            <div class="col-5">
+            <div id="smallImages" style="display: flex; justify-content: space-between; margin-top: 10px;">
                 
             </div>
-            <div class="col-7">
-                <h1>30% Off at 00:00:00 </h1>
-                <div class="countdown-container">
-                    <div class="countdown-item">
-                        <span id="countdown">00:00:00</span>
-                    </div>
-                </div>
-                <button type="submit">GET</button>
-            </div>
         </div>
-    </section>
-
-    <!-- ==================== POP-UP SECTION ==================== -->
-    <!-- Age Verification Popup -->
-    <div id="popup-container" class="popup-overlay">
-        <div class="popup-content">
-            <h4>Are you 18 or older?</h4>
-            <h2>PSNQS</h2>
-            <h4>By clicking "I am", I agree that I am over 18.</h4>
-            <div class="popup-buttons">
-                <button id="confirm-age" class="popup-btn primary">I AM</button>
-                <button id="deny-age" class="popup-btn secondary">NAH</button>
+        <div class="div2" style="width: 40%; float: right; height: auto; padding: 20px;">
+            <h2 id="productName" style="font-size: 2em; margin-bottom: 10px;">Nebula Sky Shirt</h2>
+            <p id="productPrice" style="font-size: 1.2em; margin-bottom: 10px;">Price: $49.99</p>
+            <p id="productDescription" style="font-size: 1em; line-height: 1.6;">This stylish shirt features a unique nebula design, perfect for making a statement. Made from high-quality, breathable fabric, it ensures comfort and durability.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
+                <button style="width: 100%; max-width: 200px; padding: 10px; background-color: #333; color: #fff; border: none; cursor: pointer; margin-bottom: 10px;">
+                    Add to Cart
+                </button>
+                <button style="width: 100%; max-width: 200px; padding: 10px; background-color: #eee; color: #333; border: 1px solid #ccc; cursor: pointer;">
+                    Add to Wishlist
+               </button>
             </div>
         </div>
     </div>
 
-    <!-- Newsletter Signup Popup -->
-    <div id="newsletter-popup" class="popup-overlay">
-        <div class="popup-content">
-            <h2>TOP TOP GOODS RIGHT INTO YOUR MAIL</h2>
-            <h4>SIGN UP FOR OUR NEWSLETTER AND</h4>
-            <h4>GET 20% OFF YOUR FIRST PURCHASE</h4>
-            <input type="email" placeholder="name@example.com" class="popup-input">
-            <div class="popup-buttons">
-                <button id="subscribe-btn" class="popup-btn primary">I'M IN</button>
-                <button id="close-newsletter" class="popup-btn secondary">LATER</button>
-            </div>
-        </div>
-    </div>
+    <script>
+        function changeImage(clickedImage, imagePath, name, price, description) {
+            var mainImage = document.getElementById('mainImage');
+            var currentMainImageSrc = mainImage.src;
+            var currentName = mainImage.dataset.name;
+            var currentPrice = mainImage.dataset.price;
+            var currentDescription = mainImage.dataset.description;
 
-    <!-- Best Sellers -->
-    <section>
-        <div class="section-title">
-            Best Sellers <br> -
-        </div>
-        <div class="row best-sellers ">
-            
+            document.getElementById('mainImage').src = imagePath;
+            document.getElementById('productName').innerText = name;
+            document.getElementById('productPrice').innerText = 'Price: ' + price;
+            document.getElementById('productDescription').innerText = description;
 
-            <section class="tm-section tm-section-2 mx-auto">
-                <div class="grid tm-gallery">
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 1" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Pretty Girl" class="" />
-                    <figcaption>                                                    
-                      <h2>
-                        EDITION I
-                        <span>Picture</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Red Flowers" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Red Flower</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Stairs" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 5" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 6" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 7" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 8" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 9" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 10" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 11" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                  <figure class="effect-goliath tm-gallery-item">
-                    <img src="img/1.JPEG" alt="Image 12" class="" />
-                    <figcaption>
-                      <h2>
-                        EDITION I
-                        <span>Goliath</span>
-                      </h2>
-                      <p>OUT OF STOCK</p>
-                      <a href="img/1.JPEG">View more</a>
-                    </figcaption>
-                  </figure>
-                </div>
-              </section>
-            </section>
+            mainImage.dataset.name = name;
+            mainImage.dataset.price = price;
+            mainImage.dataset.description = description;
 
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <h4 title="Out of Stock">SHOP BEST SELLERS</h4>
-                </div>
-                <div class="col-4"></div>
-            </div>
-        </div>
+            if (clickedImage) {
+                clickedImage.src = currentMainImageSrc;
+                clickedImage.onclick = function() {
+                    changeImage(this, currentMainImageSrc, currentName, currentPrice, currentDescription);
+                };
+            }
+        };
+        window.onload = function() {
+            var mainImageHeight = document.getElementById('mainImage').offsetHeight;
+            document.querySelector('.div2').style.height = mainImageHeight + 'px';
+            // Initialize with the details for the first image, and null for clickedImage
+            changeImage(null, 'img/image1.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...');
+        };
+    </script>
+    <div class="section2"></div>
+    <div class="section3"></div>
+    <div class="section4"></div>
+    <div class="section5"></div>
+
 
 
     <!-- Link to Javascript -->
     <script src="js/shop.js"></script>
 
-    <!-- footer -->
-    <footer>
-        <p>caught up, this is where you go up again. All rights reserved.</p>
-    </footer>
 </body>
 </html>
