@@ -40,7 +40,7 @@
                     <div class="total-price">$0.00</div>
                 </div>
                 <!-- Buy Button -->
-                <button type="button" class="btn-buy">Check Out</button>
+                <button id="checkout-btn" class="btn btn-primary" type="button">Checkout</button>
                 <!-- Cart Close -->
                 <i class="bx bx-x" id="close-cart"></i>
             </div>
@@ -51,11 +51,11 @@
         <div class="div1" style="width: 60%; float: left; padding: 20px;">
             <img id="mainImage" src="img/image1.png" alt="Product Image" style="width: 100%; height: auto; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" data-name="Nebula Sky Shirt" data-price="$49.99" data-description="This stylish shirt features a unique nebula design...">
             <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-                <img src="img/image1.png" alt="Small Image 1" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image1.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...')">
-                <img src="img/image2.png" alt="Small Image 2" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image2.png', 'Cosmic Dream Tee', '$54.99', 'A comfortable tee with a cosmic dream print...')">
-                <img src="img/image3.png" alt="Small Image 3" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image3.png', 'Stardust Flow Top', '$39.99', 'Light and airy top with a stardust flow pattern...')">
-                <img src="img/image4.png" alt="Small Image 4" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image4.png', 'Galaxy Swirl Shirt', '$44.99', 'Shirt with a mesmerizing galaxy swirl design...')">
-                <img src="img/image5.png" alt="Small Image 5" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/image5.png', 'Astral Echo Tee', '$59.99', 'Premium tee featuring an astral echo graphic...')">
+                <img src="img/bgsmall.png" alt="Small Image 1" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/bgsmall.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...')">
+                <img src="img/bgsmall.png" alt="Small Image 2" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/bgsmall.png', 'Cosmic Dream Tee', '$54.99', 'A comfortable tee with a cosmic dream print...')">
+                <img src="img/bgsmall.png" alt="Small Image 3" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/bgsmall.png', 'Stardust Flow Top', '$39.99', 'Light and airy top with a stardust flow pattern...')">
+                <img src="img/bgsmall.png" alt="Small Image 4" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/bgsmall.png', 'Galaxy Swirl Shirt', '$44.99', 'Shirt with a mesmerizing galaxy swirl design...')">
+                <img src="img/bgsmall.png" alt="Small Image 5" style="width: 18%; cursor: pointer; box-shadow: 4px 4px 6px rgba(0, 0, 0, 1);" onclick="changeImage(this, 'img/bgsmall.png', 'Astral Echo Tee', '$59.99', 'Premium tee featuring an astral echo graphic...')">
             </div>
             <div id="smallImages" style="display: flex; justify-content: space-between; margin-top: 10px;">
                 
@@ -77,35 +77,310 @@
     </div>
     </div>
 
+    <div id="product-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+        <div id="modal-content" style="background:#fff; padding:30px; border-radius:10px; max-width:400px; width:90%; position:relative; text-align:center;">
+            <span id="close-modal" style="position:absolute; top:10px; right:15px; font-size:2em; cursor:pointer;">&times;</span>
+            <img id="modal-img" src="" alt="" style="width:100%; max-width:200px; margin-bottom:15px;">
+            <h3 id="modal-name"></h3>
+            <p id="modal-price" style="font-weight:bold;"></p>
+            <p id="modal-description"></p>
+            <button id="modal-add-cart" style="padding:10px 20px; background:#333; color:#fff; border:none; cursor:pointer; border-radius:5px; margin-top:10px;">
+                <i class='bx bx-cart'></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
     <script>
         function changeImage(clickedImage, imagePath, name, price, description) {
             var mainImage = document.getElementById('mainImage');
-            var currentMainImageSrc = mainImage.src;
-            var currentName = mainImage.dataset.name;
-            var currentPrice = mainImage.dataset.price;
-            var currentDescription = mainImage.dataset.description;
+            var productName = document.getElementById('productName');
+            var productPrice = document.getElementById('productPrice');
+            var productDescription = document.getElementById('productDescription');
 
-            document.getElementById('mainImage').src = imagePath;
-            document.getElementById('productName').innerText = name;
-            document.getElementById('productPrice').innerText = 'Price: ' + price;
-            document.getElementById('productDescription').innerText = description;
+            // Add fade class
+            mainImage.classList.add('fade');
+            productName.classList.add('fade');
+            productPrice.classList.add('fade');
+            productDescription.classList.add('fade');
 
-            mainImage.dataset.name = name;
-            mainImage.dataset.price = price;
-            mainImage.dataset.description = description;
+            setTimeout(function() {
+                mainImage.src = imagePath;
+                productName.innerText = name;
+                productPrice.innerText = 'Price: ' + price;
+                productDescription.innerText = description;
+
+                mainImage.dataset.name = name;
+                mainImage.dataset.price = price;
+                mainImage.dataset.description = description;
+
+                // Remove fade and add unfade
+                mainImage.classList.remove('fade');
+                productName.classList.remove('fade');
+                productPrice.classList.remove('fade');
+                productDescription.classList.remove('fade');
+
+                mainImage.classList.add('unfade');
+                productName.classList.add('unfade');
+                productPrice.classList.add('unfade');
+                productDescription.classList.add('unfade');
+
+                setTimeout(function() {
+                    mainImage.classList.remove('unfade');
+                    productName.classList.remove('unfade');
+                    productPrice.classList.remove('unfade');
+                    productDescription.classList.remove('unfade');
+                }, 500);
+            }, 500);
 
             if (clickedImage) {
+                var currentMainImageSrc = mainImage.src;
+                var currentName = mainImage.dataset.name;
+                var currentPrice = mainImage.dataset.price;
+                var currentDescription = mainImage.dataset.description;
                 clickedImage.src = currentMainImageSrc;
                 clickedImage.onclick = function() {
                     changeImage(this, currentMainImageSrc, currentName, currentPrice, currentDescription);
                 };
             }
+
+            // Only add to recently viewed if user clicked
+            if (clickedImage !== null) {
+                addRecentlyViewed({
+                    image: imagePath,
+                    name: name,
+                    price: price,
+                    description: description
+                });
+            }
+
+            // Always re-attach the event listener to the Add to Cart button
+            document.querySelector('.div2 button').onclick = addToCart;
         };
+        // --- Cart Logic ---
+        let cart = [];
+
+        function updateCartDisplay() {
+            const cartContent = document.querySelector('.cart-content');
+            cartContent.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.style.display = 'flex';
+                div.style.justifyContent = 'space-between';
+                div.style.alignItems = 'center';
+                div.style.marginBottom = '10px';
+                div.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>${item.price}</span>
+                    <button style="background: none; border: none; color: red; cursor: pointer;" onclick="removeFromCart(${idx})">Remove</button>
+                `;
+                cartContent.appendChild(div);
+                total += parseFloat(item.price.replace('$', ''));
+            });
+            document.querySelector('.total-price').innerText = `$${total.toFixed(2)}`;
+        }
+
+        function addToCart() {
+            const mainImage = document.getElementById('mainImage');
+            const name = mainImage.dataset.name;
+            const price = mainImage.dataset.price;
+            cart.push({ name, price });
+            updateCartDisplay();
+        }
+
+        function removeFromCart(idx) {
+            cart.splice(idx, 1);
+            updateCartDisplay();
+        }
+
+        // Product data array
+        const products = [
+            {
+                image: 'img/bgsmall.png',
+                name: 'Nebula Sky Shirt',
+                price: '$49.99',
+                description: 'This stylish shirt features a unique nebula design...'
+            },
+            {
+                image: 'img/bgsmall.png',
+                name: 'Cosmic Dream Tee',
+                price: '$54.99',
+                description: 'A comfortable tee with a cosmic dream print...'
+            },
+            {
+                image: 'img/bgsmall.png',
+                name: 'Stardust Flow Top',
+                price: '$39.99',
+                description: 'Light and airy top with a stardust flow pattern...'
+            },
+            {
+                image: 'img/bgsmall.png',
+                name: 'Galaxy Swirl Shirt',
+                price: '$44.99',
+                description: 'Shirt with a mesmerizing galaxy swirl design...'
+            },
+            {
+                image: 'img/bgsmall.png',
+                name: 'Astral Echo Tee',
+                price: '$59.99',
+                description: 'Premium tee featuring an astral echo graphic...'
+            }
+        ];
+
+        let currentProductIndex = 0;
+        let productInterval = null;
+
+        // Helper to show a product by index
+        function showProduct(index) {
+            const p = products[index];
+            changeImage(null, p.image, p.name, p.price, p.description);
+            currentProductIndex = index;
+        }
+
+        // Start or restart the auto-rotation
+        function startProductRotation() {
+            if (productInterval) clearInterval(productInterval);
+            productInterval = setInterval(() => {
+                currentProductIndex = (currentProductIndex + 1) % products.length;
+                showProduct(currentProductIndex);
+            }, 5000);
+        }
+
+        // Attach click handlers to small images
         window.onload = function() {
-            var mainImageHeight = document.getElementById('mainImage').offsetHeight;
-            document.querySelector('.div2').style.height = mainImageHeight + 'px';
-            // Initialize with the details for the first image, and null for clickedImage
-            changeImage(null, 'img/bgsmall.png', 'Nebula Sky Shirt', '$49.99', 'This stylish shirt features a unique nebula design...');
+            // Small images auto-rotation
+            const smallImages = document.querySelectorAll('.div1 > div > img');
+            smallImages.forEach((img, idx) => {
+                img.onclick = function() {
+                    showProduct(idx);
+                    startProductRotation();
+                    // Add to recently viewed
+                    changeImage(
+                        this,
+                        this.src,
+                        this.dataset.name,
+                        this.dataset.price,
+                        this.dataset.description
+                    );
+                };
+            });
+            showProduct(0);
+            startProductRotation();
+
+            // Attach event to Add to Cart button in main product area
+            document.querySelector('.div2 button').onclick = addToCart;
+
+            // For YOU MIGHT LIKE section
+            document.querySelectorAll('.add-cart-btn').forEach(btn => {
+                btn.onclick = function(e) {
+                    e.stopPropagation();
+                    const img = this.closest('.col-md-3, .col-sm-6').querySelector('.you-might-like-img');
+                    cart.push({
+                        name: img.dataset.name,
+                        price: img.dataset.price
+                    });
+                    updateCartDisplay();
+                };
+            });
+        };
+
+        // Cart open/close logic
+        document.getElementById('cart-icon').onclick = function() {
+            document.querySelector('.cart').classList.add('active');
+        };
+        document.getElementById('close-cart').onclick = function() {
+            document.querySelector('.cart').classList.remove('active');
+        };
+
+        // Handle checkout button click
+        document.getElementById('checkout-btn').onclick = function() {
+            window.location.href = 'checkout.html';
+        };
+
+        // 10 demo products for "You Might Like"
+        const youMightLikeProducts = [
+            { name: "Nebula Sky Shirt", price: "$49.99" },
+            { name: "Cosmic Dream Tee", price: "$54.99" },
+            { name: "Stardust Flow Top", price: "$39.99" },
+            { name: "Galaxy Swirl Shirt", price: "$44.99" },
+            { name: "Astral Echo Tee", price: "$59.99" },
+            { name: "Lunar Wave Hoodie", price: "$69.99" },
+            { name: "Solar Flare Cap", price: "$24.99" },
+            { name: "Meteor Trail Shorts", price: "$34.99" },
+            { name: "Comet Burst Socks", price: "$14.99" },
+            { name: "Orbit Path Jacket", price: "$89.99" }
+        ];
+
+        let currentIndex = 0;
+        let rotationInterval = null;
+
+        // Show product by index with fade effect
+        function showProductWithFade(index) {
+            const product = youMightLikeProducts[index];
+            changeImage(
+                null,
+                "img/bgsmall.png",
+                product.name,
+                product.price,
+                "This is a cool product from the You Might Like section!"
+            );
+            currentIndex = index;
+        }
+
+        // Start auto-rotation of "You Might Like" products
+        function startRotation() {
+            if (rotationInterval) clearInterval(rotationInterval);
+            rotationInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % youMightLikeProducts.length;
+                showProductWithFade(currentIndex);
+            }, 5000);
+        }
+
+        window.onload = function() {
+            // Small images auto-rotation
+            const smallImages = document.querySelectorAll('.div1 > div > img');
+            smallImages.forEach((img, idx) => {
+                img.onclick = function() {
+                    showProduct(idx);
+                    startProductRotation();
+                    // Add to recently viewed
+                    changeImage(
+                        this,
+                        this.src,
+                        this.dataset.name,
+                        this.dataset.price,
+                        this.dataset.description
+                    );
+                };
+            });
+            showProduct(0);
+            startProductRotation();
+
+            // Attach event to Add to Cart button in main product area
+            document.querySelector('.div2 button').onclick = addToCart;
+
+            // For YOU MIGHT LIKE section
+            document.querySelectorAll('.add-cart-btn').forEach(btn => {
+                btn.onclick = function(e) {
+                    e.stopPropagation();
+                    const img = this.closest('.col-md-3, .col-sm-6').querySelector('.you-might-like-img');
+                    cart.push({
+                        name: img.dataset.name,
+                        price: img.dataset.price
+                    });
+                    updateCartDisplay();
+                };
+            });
+        };
+
+        // Close modal logic
+        document.getElementById('close-modal').onclick = function() {
+            document.getElementById('product-modal').style.display = 'none';
+        };
+        // Optional: close modal when clicking outside content
+        document.getElementById('product-modal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
         };
     </script>
     <hr>
@@ -113,33 +388,113 @@
         <!-- YOU MIGHT LIKE -->
         <div class="you-might-like" style="margin-bottom: 40px;">
             <h2 style="text-align: left; margin-bottom: 30px; font-weight: bold;">YOU MIGHT LIKE..</h2>
-            <div class="row">
-                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
-                    <img src="img/bgsmall.png" alt="Cosmic Dream Tee" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
-                    <h4>Cosmic Dream Tee</h4>
-                    <p>$54.99</p>
+            <div class="row" id="you-might-like-row">
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Nebula Sky Shirt" class="you-might-like-img" data-name="Nebula Sky Shirt" data-price="$49.99" data-description="This stylish shirt features a unique nebula design..." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Nebula Sky Shirt</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$49.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
-                    <img src="img/image3.png" alt="Stardust Flow Top" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
-                    <h4>Stardust Flow Top</h4>
-                    <p>$39.99</p>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Cosmic Dream Tee" class="you-might-like-img" data-name="Cosmic Dream Tee" data-price="$54.99" data-description="A comfortable tee with a cosmic dream print..." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Cosmic Dream Tee</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$54.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
-                    <img src="img/image4.png" alt="Galaxy Swirl Shirt" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
-                    <h4>Galaxy Swirl Shirt</h4>
-                    <p>$44.99</p>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Stardust Flow Top" class="you-might-like-img" data-name="Stardust Flow Top" data-price="$39.99" data-description="Light and airy top with a stardust flow pattern..." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Stardust Flow Top</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$39.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px;">
-                    <img src="img/image5.png" alt="Astral Echo Tee" style="width:100%; box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); margin-bottom: 10px;">
-                    <h4>Astral Echo Tee</h4>
-                    <p>$59.99</p>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Galaxy Swirl Shirt" class="you-might-like-img" data-name="Galaxy Swirl Shirt" data-price="$44.99" data-description="Shirt with a mesmerizing galaxy swirl design..." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Galaxy Swirl Shirt</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$44.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Astral Echo Tee" class="you-might-like-img" data-name="Astral Echo Tee" data-price="$59.99" data-description="Premium tee featuring an astral echo graphic..." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Astral Echo Tee</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$59.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Lunar Wave Hoodie" class="you-might-like-img" data-name="Lunar Wave Hoodie" data-price="$69.99" data-description="Stay stylish and warm with our Lunar Wave Hoodie." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Lunar Wave Hoodie</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$69.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Solar Flare Cap" class="you-might-like-img" data-name="Solar Flare Cap" data-price="$24.99" data-description="Complete your look with our Solar Flare Cap." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Solar Flare Cap</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$24.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Meteor Trail Shorts" class="you-might-like-img" data-name="Meteor Trail Shorts" data-price="$34.99" data-description="Be summer-ready with our Meteor Trail Shorts." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Meteor Trail Shorts</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$34.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Comet Burst Socks" class="you-might-like-img" data-name="Comet Burst Socks" data-price="$14.99" data-description="Step up your sock game with our Comet Burst Socks." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Comet Burst Socks</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$14.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="text-align: center; margin-bottom: 20px; position: relative;">
+                    <img src="img/bgsmall.png" alt="Orbit Path Jacket" class="you-might-like-img" data-name="Orbit Path Jacket" data-price="$89.99" data-description="Make a statement with our Orbit Path Jacket." style="width:100%; box-shadow: 4px 4px 6px rgba(0,0,0,0.5); margin-bottom: 10px; cursor:pointer;">
+                    <h4 style="margin-bottom: 5px;">Orbit Path Jacket</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">
+                        <p style="margin: 0;">$89.99</p>
+                        <button class="add-cart-btn" style="background: none; border: none; cursor: pointer;">
+                            <i class='bx bx-cart' style="font-size: 1.5em; color: #333;"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- RECENTLY VIEWED -->
         <div class="recently-viewed">
             <h2 style="text-align: left; margin-bottom: 20px; font-weight: bold;">RECENTLY VIEWED...</h2>
-            <div class="row">
+            <div class="row" id="recently-viewed-row">
                 <!-- Recently viewed items would be dynamically populated here. -->
             </div>
         </div>
