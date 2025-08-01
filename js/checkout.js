@@ -34,4 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // You can redirect to a confirmation page or perform other actions
         // window.location.href = 'confirmation.html';
     });
+
+    // Example: get cart from localStorage (adjust if you use another method)
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const tbody = document.querySelector('#order-table tbody');
+    const totalCell = document.getElementById('order-total');
+
+    let total = 0;
+    tbody.innerHTML = '';
+    cart.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${item.name}</td><td>${item.price}</td>`;
+        tbody.appendChild(tr);
+        // Remove $ and parse float
+        total += parseFloat(item.price.replace('$', ''));
+    });
+    totalCell.textContent = `$${total.toFixed(2)}`;
 });
