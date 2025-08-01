@@ -43,7 +43,7 @@ header {
     width: 360px;
     min-height: 100vh;
     padding: 20px;
-    background: var(--bg-color);
+    background: var(--bg-color, #fff); /* fallback to white if --bg-color is not set */
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
     transition: 0.3s;
 }
@@ -187,9 +187,14 @@ header {
     background: hsl(249, 32%, 17%);
 }
 
-
-
-
+.fade {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.unfade {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
 
 
 
@@ -250,4 +255,10 @@ footer{
     .cart{
         width: 280px;
     }
+}
+
+:root {
+    --bg-color: #fff;
+    --main-color: #6c63ff;
+    --text-color: #222;
 }
